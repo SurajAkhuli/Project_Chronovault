@@ -6,16 +6,3 @@ Werkzeug==2.3.7
 python-dotenv==1.0.0
 
 
-chronovault/
-├── app.py              # Main application file
-├── config.py           # Configuration settings
-├── requirements.txt    # Python dependencies
-├── .env               # Environment variables (create this)
-├── templates/         # HTML templates
-│   ├── base.html
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   └── create_message.html
-└── chronovault.db     # SQLite database (created automatically)
