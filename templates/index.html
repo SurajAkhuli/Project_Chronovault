@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome to ChronoVault</h2>
+<p>Send messages to your future self!</p>
+
+<p>How it works:</p>
+<ul>
+    <li>Write a message</li>
+    <li>Set future delivery date</li>
+    <li>Get it via email when time comes</li>
+</ul>
+
+{% if not session.user_id %}
+    <p><a href="/register">Register</a> to get started or <a href="/login">Login</a></p>
+{% else %}
+    <p><a href="/dashboard">Go to Dashboard</a></p>
+{% endif %}
+{% endblock %}

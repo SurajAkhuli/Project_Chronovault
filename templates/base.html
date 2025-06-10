@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}ChronoVault{% endblock %}</title>
+</head>
+<body>
+    <h1>ChronoVault - Time-Locked Messages</h1>
+    
+    <nav>
+        <a href="/">Home</a> | 
+        {% if session.user_id %}
+            <a href="/dashboard">Dashboard</a> | 
+            <a href="/create_message">New Message</a> | 
+            <a href="/logout">Logout ({{ session.username }})</a>
+        {% else %}
+            <a href="/login">Login</a> | 
+            <a href="/register">Register</a>
+        {% endif %}
+    </nav>
+    
+    <hr>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: red;"><strong>{{ message }}</strong></p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Create Message{% endblock %}
+
+{% block content %}
+<h2>Create Time-Locked Message</h2>
+
+<p><strong>Warning:</strong> Once saved, you cannot view this message until delivery!</p>
+
+<form method="POST">
+    <p>
+        <label>Your Message:</label><br>
+        <textarea name="content" rows="10" cols="50" placeholder="Write your message..." required></textarea>
+    </p>
+
+    <p>
+        <label>Send to Email:</label><br>
+        <input type="email" name="recipient_email" required>
+    </p>
+
+    <p>
+        <label>Delivery Date:</label><br>
+        <input type="date" name="delivery_date" required>
+    </p>
+
+    <p>
+        <label>Delivery Time:</label><br>
+        <input type="time" name="delivery_time" required>
+    </p>
+
+    <p>
+        <input type="submit" value="Lock Message" onclick="return confirm('Are you sure? Message will be locked!')">
+        <a href="/dashboard">Cancel</a>
+    </p>
+</form>
+{% endblock %}
